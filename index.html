@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal website of Howard Liu — engineer, traveler, LEGO enthusiast, music lover, and someone still figuring out what's next." />
+    <meta name="theme-color" content="#f6f2e9" />
+    <meta property="og:title" content="Howard Liu — About me" />
+    <meta property="og:description" content="Engineer, traveler, LEGO enthusiast, music lover, and someone still figuring out what's next." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="profile.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <title>Howard Liu — About me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="top">
+      <nav class="nav shell" aria-label="Main navigation">
+        <a class="wordmark" href="#top" aria-label="Howard Liu, home">HOWARD<span>.</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#about">About</a>
+          <a href="#places">Places</a>
+          <a href="#interests">Interests</a>
+          <a href="#journey">Journey</a>
+          <a href="#currently">Currently</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">A small corner of the internet</p>
+          <h1 id="hero-title">Hi, I’m Howard.</h1>
+          <p class="hero-intro">Engineer by training.<br />Traveler by curiosity.<br />Still figuring out what’s next.</p>
+          <div class="hero-foot">
+            <span class="location"><span aria-hidden="true">⌖</span> Kaohsiung, Taiwan</span>
+            <a class="text-link" href="#about">Explore my world <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-portrait reveal reveal-delay">
+          <div class="portrait-sun" aria-hidden="true"></div>
+          <figure>
+            <img src="profile.jpg" alt="Howard Liu standing outside a historic wooden building" fetchpriority="high" />
+            <figcaption>One sunny day in Taiwan.</figcaption>
+          </figure>
+          <span class="portrait-note">born curious<br />since ’97</span>
+        </div>
+      </section>
+
+      <section class="about section shell" id="about" aria-labelledby="about-title">
+        <div class="section-kicker reveal"><span>01</span> WHO I AM</div>
+        <div class="about-grid">
+          <h2 id="about-title" class="reveal">A little<br /><em>about me.</em></h2>
+          <div class="about-copy reveal reveal-delay">
+            <p>Hi, I’m Howard.</p>
+            <p>I studied marine engineering, spent a few years working in the semiconductor industry, and somehow ended up becoming equally interested in traveling, music, LEGO, books, people, and figuring out what I actually want to do next.</p>
+            <p>I like trying things that are slightly outside my comfort zone — from working around EUV machines to traveling alone across cities I’ve never been to.</p>
+            <div class="about-tags" aria-label="A few things about Howard">
+              <span>1997.08.19</span><span>ocean at heart</span><span>always planning a trip</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="places section shell" id="places" aria-labelledby="places-title">
+        <div class="section-heading reveal">
+          <div class="section-kicker"><span>02</span> PLACES I’VE BEEN</div>
+          <div>
+            <h2 id="places-title">Been <em>traveling.</em></h2>
+            <p>I like getting lost in places I’ve never been.</p>
+          </div>
+        </div>
+
+        <div class="travel-stories">
+          <article class="travel-story xian reveal">
+            <div class="story-copy">
+              <p class="place-index">01 / CHINA</p>
+              <h3><span aria-hidden="true">🇨🇳</span> Xi’an</h3>
+              <p class="story-meta">Solo trip</p>
+              <p class="story-text">One of the places where history feels less like a textbook and more like part of everyday life.</p>
+            </div>
+            <div class="photo-pair">
+              <figure class="photo-large"><img src="xian.jpg" alt="The illuminated Bell Tower in Xi'an at night" loading="lazy" /></figure>
+              <figure class="photo-small"><img src="xian 2.jpg" alt="Gold-lined mural at a Xi'an temple" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="travel-story tokyo reveal">
+            <div class="photo-pair">
+              <figure class="photo-large"><img src="tokyo%20(2).jpg" alt="Entrance to Kiyomizu Kannon-do in Tokyo" loading="lazy" /></figure>
+              <figure class="photo-small"><img src="tokyo.jpg" alt="A bowl of ramen and gyoza during a Tokyo trip" loading="lazy" /></figure>
+            </div>
+            <div class="story-copy">
+              <p class="place-index">02 / JAPAN</p>
+              <h3><span aria-hidden="true">🇯🇵</span> Tokyo</h3>
+              <p class="story-meta">2026</p>
+              <p class="story-text">Asakusa, Kuramae, Tokyo Skytree, Kawaguchiko — and every delicious wrong turn in between.</p>
+            </div>
+          </article>
+
+          <article class="travel-story singapore reveal">
+            <div class="story-copy">
+              <p class="place-index">03 / SINGAPORE</p>
+              <h3><span aria-hidden="true">🇸🇬</span> Singapore</h3>
+              <p class="story-meta">Solo trip</p>
+              <p class="story-text">Museums, unforgettable food, and a little bit of Harry Potter: Visions of Magic.</p>
+            </div>
+            <figure class="singapore-photo"><img src="singapore.jpg" alt="Howard looking at Singapore's glowing skyline at night" loading="lazy" /></figure>
+          </article>
+        </div>
+        <p class="future-destinations reveal">Next pins on the map <span>Chiang Mai · Yunnan · Chengdu</span></p>
+      </section>
+
+      <section class="interests section shell" id="interests" aria-labelledby="interests-title">
+        <div class="section-heading reveal">
+          <div class="section-kicker"><span>03</span> THINGS I LIKE</div>
+          <h2 id="interests-title">A few things that <em>light me up.</em></h2>
+        </div>
+        <div class="interest-grid">
+          <article class="interest-card music reveal"><span class="interest-icon" aria-hidden="true">🎧</span><h3>Music</h3><p>R&amp;B / RAP — the kind of music that makes a long walk feel cinematic.</p></article>
+          <article class="interest-card lego reveal"><span class="interest-icon" aria-hidden="true">🧱</span><h3>LEGO</h3><p>Especially fantasy worlds and Lord of the Rings sets. Tiny bricks, very big stories.</p></article>
+          <article class="interest-card books reveal"><span class="interest-icon" aria-hidden="true">📚</span><h3>Books</h3><p>Fantasy literature, <i>The Inheritance Cycle</i>, and <i>Murtagh</i> on the bedside table.</p></article>
+          <article class="interest-card ocean reveal"><span class="interest-icon" aria-hidden="true">🌊</span><h3>Ocean</h3><p>Marine environment, boating, and the feeling of a horizon with no end in sight.</p></article>
+          <article class="interest-card travel reveal"><span class="interest-icon" aria-hidden="true">✈️</span><h3>Solo travel</h3><p>Exploring a new city alone, slowly enough to find the unexpected parts.</p></article>
+          <article class="interest-card food reveal"><span class="interest-icon" aria-hidden="true">🍪</span><h3>Food</h3><p>Vegetarian finds, interesting local food, and always leaving room for dessert.</p></article>
+        </div>
+      </section>
+
+      <section class="journey section shell" id="journey" aria-labelledby="journey-title">
+        <div class="section-heading reveal">
+          <div class="section-kicker"><span>04</span> MY JOURNEY</div>
+          <div><h2 id="journey-title">The chapters so far.</h2><p>Not a résumé — just a few places that shaped how I see the world.</p></div>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="brand-line"><img class="brand-logo nsysu-logo" src="nsysu.jpg" alt="National Sun Yat-sen University logo" loading="lazy" /><div><h3>National Sun Yat-sen University</h3><p class="role">M.S. Marine Environmental Engineering</p></div></div>
+              <p>Where an interest in the sea grew into research on marine tourism and offshore wind.</p>
+              <time datetime="2022">Kaohsiung · 2022</time>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="brand-line"><img class="brand-logo asml-logo" src="asml.jpg" alt="ASML logo" loading="lazy" /><div><h3>ASML</h3><p class="role">EUV Upgrade Engineer</p></div></div>
+              <p>My first chapter in semiconductor engineering — working around EUV lithography and learning what it means to work with extremely complex machines.</p>
+              <time datetime="2023-01">2023.01 – 2024.06</time>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="brand-line"><img class="brand-logo amat-logo" src="Applied-Materials-logo-amat.png" alt="Applied Materials logo" loading="lazy" /><div><h3>Applied Materials</h3><p class="role">Etch Equipment Engineer</p></div></div>
+              <p>Another chapter in semiconductor engineering, this time working with etch equipment and learning more about life inside the industry.</p>
+              <time datetime="2024-12">2024.12 – 2026.07</time>
+            </div>
+          </article>
+          <article class="timeline-item next reveal">
+            <span class="timeline-dot" aria-hidden="true">?</span>
+            <div class="timeline-card"><p class="place-index">STILL UNWRITTEN</p><h3>What’s next?</h3><p>Maybe a new city. Maybe a new idea. Probably both.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="beyond section shell" aria-labelledby="beyond-title">
+        <div class="beyond-card reveal">
+          <p class="section-kicker"><span>EXTRA PAGE</span> PEOPLE &amp; COMMUNITY</p>
+          <h2 id="beyond-title">A few stories are best told <em>with other people.</em></h2>
+          <p>Before all the machines and maps, I joined international volunteer trips in Cambodia and the Philippines, took part in youth and Asia-Pacific programs, and tried my hand at an entrepreneurial summer camp. I still value the simple work of showing up, planning something together, and making space for people to connect.</p>
+        </div>
+      </section>
+
+      <section class="currently section shell" id="currently" aria-labelledby="currently-title">
+        <div class="section-heading reveal"><div class="section-kicker"><span>05</span> THINGS I’M INTO LATELY</div><div><h2 id="currently-title">Currently<span class="dot">...</span></h2><p>A small snapshot of what’s moving through my mind these days.</p></div></div>
+        <div class="currently-grid">
+          <article class="current-card reveal"><span>🇬🇧</span><div><h3>IELTS / English</h3><p>TOEIC 960. Currently preparing for IELTS.</p></div></article>
+          <article class="current-card reveal"><span>✈️</span><div><h3>Travel</h3><p>Thinking about the next destination — as usual.</p></div></article>
+          <article class="current-card reveal"><span>🌏</span><div><h3>Digital nomad life</h3><p>Interested in living and working remotely from Chiang Mai, Bangkok, Yunnan, or Chengdu.</p></div></article>
+          <article class="current-card reveal"><span>🍪</span><div><h3>Future cookie shop</h3><p>Someday, I want to open a real, physical cookie shop.</p></div></article>
+        </div>
+      </section>
+
+      <section class="random section shell" aria-labelledby="random-title">
+        <div class="section-heading reveal"><div class="section-kicker"><span>06</span> RANDOM THINGS ABOUT ME</div><h2 id="random-title">The little <em>footnotes.</em></h2></div>
+        <div class="fact-grid">
+          <div class="fact reveal"><strong>960</strong><span>TOEIC score</span></div><div class="fact reveal"><strong>2</strong><span>Semiconductor companies</span></div><div class="fact reveal"><strong>3+</strong><span>Solo trips</span></div><div class="fact reveal"><strong>🚤</strong><span>Motorboat license</span></div><div class="fact reveal"><strong>🛟</strong><span>Lifeguard</span></div><div class="fact reveal"><strong>🧱</strong><span>LEGO enthusiast</span></div><div class="fact reveal"><strong>🍪</strong><span>Future cookie shop</span></div>
+        </div>
+      </section>
+
+      <section class="next section" aria-labelledby="next-title">
+        <div class="shell next-inner reveal">
+          <div class="section-kicker"><span>07</span> WHAT’S NEXT</div>
+          <h2 id="next-title">I don’t have everything<br />figured out <em>yet.</em></h2>
+          <p class="next-lead">And honestly, I think that’s okay.</p>
+          <div class="next-list" aria-label="Things Howard is looking toward"><span>IELTS</span><span>Remote life</span><span>Travel</span><span>Entrepreneurship</span><span>Cookie shop</span></div>
+          <p class="next-closer">Maybe I’ll figure it out somewhere between Taiwan, Southeast Asia, and a cookie shop.</p>
+        </div>
+      </section>
+
+      <section class="contact section shell" id="contact" aria-labelledby="contact-title">
+        <div class="section-kicker reveal"><span>08</span> CONTACT</div>
+        <div class="contact-content reveal"><h2 id="contact-title">Let’s <em>connect.</em></h2><p>If you happen to share an interest in travel, technology, music, books, LEGO, food, or just figuring life out — say hi.</p><a class="email-button" href="mailto:howard7876@gmail.com">Send me an email <span aria-hidden="true">→</span></a></div>
+      </section>
+    </main>
+    <footer class="footer shell"><p>Made with curiosity.</p><p>Howard Liu · Kaohsiung, Taiwan</p><a href="mailto:howard7876@gmail.com">howard7876@gmail.com</a></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
