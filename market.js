@@ -1,6 +1,21 @@
 (function () {
-  const snapshot = window.marketSnapshot;
-  if (!snapshot) return;
+  function showDataFailure() {
+    const status = document.getElementById('verification-status');
+    const detail = document.getElementById('verification-detail');
+    const card = document.querySelector('.verification-card');
+    const icon = document.querySelector('.verification-icon');
+    if (card) card.classList.add('is-failed');
+    if (icon) icon.textContent = '!';
+    if (status) status.textContent = '市場資料無法載入；請勿將本頁視為最新行情。';
+    if (detail) detail.textContent = '請稍後重新整理，或直接從 Investing.com 的來源連結核對報價。';
+  }
+
+  function renderMarket() {
+    const snapshot = window.marketSnapshot;
+    if (!snapshot) {
+      showDataFailure();
+      return;
+    }
 
   const byId = (id) => document.getElementById(id);
   const setText = (id, value) => { const node = byId(id); if (node) node.textContent = value; };
@@ -76,22 +91,29 @@
     return item;
   }
 
-  setText('market-score', snapshot.score.value);
-  setText('market-score-label', snapshot.score.label);
-  if (snapshot.verification.state !== 'verified' || verificationTooOld) {
-    verificationCard.classList.add('is-failed');
-    verificationIcon.textContent = '!';
-    setText('verification-status', verificationTooOld ? '資料核對時間超過 36 小時，請勿當作最新行情。' : snapshot.verification.headline);
-    setText('verification-detail', verificationTooOld ? `最近成功核對：${snapshot.lastVerified}。更新程序必須重新讀取來源後才可恢復「已核對」。` : snapshot.verification.detail);
-  } else {
-    setText('verification-status', snapshot.verification.headline);
-    setText('verification-detail', snapshot.verification.detail);
+    setText('market-score', snapshot.score.value);
+    setText('market-score-label', snapshot.score.label);
+    if (snapshot.verification.state !== 'verified' || verificationTooOld) {
+      verificationCard.classList.add('is-failed');
+      verificationIcon.textContent = '!';
+      setText('verification-status', verificationTooOld ? '資料核對時間超過 36 小時，請勿當作最新行情。' : snapshot.verification.headline);
+      setText('verification-detail', verificationTooOld ? `最近成功核對：${snapshot.lastVerified}。更新程序必須重新讀取來源後才可恢復「已核對」。` : snapshot.verification.detail);
+    } else {
+      setText('verification-status', snapshot.verification.headline);
+      setText('verification-detail', snapshot.verification.detail);
+    }
+    setText('footer-date', `資料核對：${snapshot.lastVerified}`);
+    byId('market-score').parentElement.classList.add(`tone-${snapshot.score.tone}`);
+    renderQuotes('equity-cards', snapshot.groups.equity);
+    renderQuotes('rates-cards', snapshot.groups.rates);
+    renderQuotes('energy-cards', snapshot.groups.energy);
+    const signals = byId('signals');
+    snapshot.signals.forEach((signal) => signals.appendChild(signalItem(signal)));
   }
-  setText('footer-date', `資料核對：${snapshot.lastVerified}`);
-  byId('market-score').parentElement.classList.add(`tone-${snapshot.score.tone}`);
-  renderQuotes('equity-cards', snapshot.groups.equity);
-  renderQuotes('rates-cards', snapshot.groups.rates);
-  renderQuotes('energy-cards', snapshot.groups.energy);
-  const signals = byId('signals');
-  snapshot.signals.forEach((signal) => signals.appendChild(signalItem(signal)));
+
+  const dataScript = document.createElement('script');
+  dataScript.src = `market-data.js?v=${Date.now()}`;
+  dataScript.addEventListener('load', renderMarket, { once: true });
+  dataScript.addEventListener('error', showDataFailure, { once: true });
+  document.head.appendChild(dataScript);
 })();

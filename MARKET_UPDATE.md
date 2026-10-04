@@ -8,7 +8,7 @@ This site is a market-monitoring dashboard, not investment advice. `market-data.
 2. Update `lastVerified` only after the pages have been checked. Keep each instrument's `quoteDate` as the actual exchange date shown by Investing.com. On a weekend or market holiday it is normal for this to be the previous session.
 3. If a current quote or its exchange date cannot be confirmed, do **not** retain it as if it were new. Set `verification.state` to `failed`, write a plain-language reason in `headline` and `detail`, and publish that status.
 4. Keep all quote values linked to their instrument source. Never overwrite a source URL with an unaudited link.
-5. Check JavaScript syntax after editing. Commit and push only the files used by the dashboard (`market-data.js`, or a required dashboard file); do not stage unrelated user files.
+5. Check JavaScript syntax after editing. Commit and push only the files used by the dashboard (`market-data.js`, or a required dashboard file); do not stage unrelated user files. The page loads `market-data.js` with a cache-busting query so a newly published verified snapshot is fetched rather than a browser-cached prior snapshot.
 
 ## Quote sources
 
