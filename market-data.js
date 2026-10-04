@@ -12,8 +12,8 @@ window.marketSnapshot = {
     detail: "資料來源頁面於 2026-10-04 核對。台、美、日市場主要報價的最近交易日為 2026-10-02；並未把週末當成新的交易日。"
   },
   alerts: {
-    activeKeys: [],
-    lastNotifiedAt: null
+    activeKeys: ["rates-red"],
+    lastNotifiedAt: "2026-10-04"
   },
   score: {
     value: "5.4 / 10",
@@ -30,7 +30,7 @@ window.marketSnapshot = {
     ],
     rates: [
       { name: "美國 2 年債", ticker: "US 2Y", value: "4.783%", change: "參考值", quoteDate: "最近來源報價", tone: "amber", note: "短端仍在偏高區域。", source: "https://www.investing.com/rates-bonds/" },
-      { name: "美國 10 年債", ticker: "US 10Y", value: "5.277%", change: "+0.043", quoteDate: "2026-10-02 收盤", tone: "red", note: "高於 5.20% 警戒線，尚未到 5.40% 紅線。", source: "https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield" },
+      { name: "美國 10 年債", ticker: "US 10Y", value: "5.277%", change: "+0.043", quoteDate: "2026-10-02 收盤", tone: "red", note: "高於 5.20% 紅線，利率壓力已觸發。", source: "https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield" },
       { name: "日本 10 年債", ticker: "JP 10Y", value: "3.102%", change: "+0.002", quoteDate: "2026-10-02 收盤", tone: "red", note: "位於 3% 以上的高檔區。", source: "https://www.investing.com/rates-bonds/japan-10-year-bond-yield" }
     ],
     energy: [
@@ -39,7 +39,7 @@ window.marketSnapshot = {
     ]
   },
   signals: [
-    { level: "red", title: "利率壓力", rule: "美國 10 年債 ≥ 5.40%", current: "目前 5.277% · 未觸發", description: "若觸發，優先檢查高估值與長存續期資產的風險。" },
+    { level: "red", title: "利率壓力", rule: "美國 10 年債 > 5.20%", current: "目前 5.277% · 已觸發", description: "利率紅線已觸發；這是風險提醒，不是單一買賣指令。" },
     { level: "red", title: "恐慌波動", rule: "VIX ≥ 25", current: "目前 15.31 · 未觸發", description: "這是市場壓力加速的提醒，不是單一買賣訊號。" },
     { level: "red", title: "能源衝擊", rule: "Brent ≥ $110 或 WTI ≥ $100", current: "Brent $102.25 · WTI $91.26 · 未觸發", description: "若觸發，檢查通膨與地緣風險是否同步升級。" },
     { level: "amber", title: "股市急跌", rule: "TWII、NDX 或 SOX 單日 ≤ -3%", current: "最近交易日未觸發", description: "先辨認是否為單一產業消息或跨市場賣壓。" }

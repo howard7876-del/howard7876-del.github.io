@@ -27,7 +27,7 @@ This site is a market-monitoring dashboard, not investment advice. `market-data.
 
 Notify Howard only when a rule newly enters the triggered state, or when the data-verification process itself fails. Store the current triggered IDs in `alerts.activeKeys` and the send time in `alerts.lastNotifiedAt`, so a persistent red signal does not produce duplicate notifications each run.
 
-- `rates-red`: U.S. 10Y >= 5.40%
+- `rates-red`: U.S. 10Y > 5.20%
 - `vix-red`: VIX >= 25
 - `energy-red`: Brent >= $110 or WTI >= $100
 - `equity-drawdown`: TWII, NDX, or SOX <= -3% for the latest session
