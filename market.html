@@ -65,17 +65,91 @@
         </aside>
       </section>
 
+      <section class="market-section euro-section" aria-labelledby="euro-title">
+        <div class="section-heading">
+          <div><p class="kicker">02B / EUROPE &amp; YEN</p><h2 id="euro-title">歐債與日圓，不只看絕對數字。</h2></div>
+          <p>法國 10 年債要和德國 Bund 的利差一起看；日圓則特別監測突然升值造成的 carry trade 回補。</p>
+        </div>
+        <div id="euro-cards" class="quote-grid quote-grid-four" aria-live="polite"></div>
+        <aside class="method-strip">
+          <strong>OAT–Bund spread = France 10Y − Germany 10Y</strong>
+          <span>利差擴大才是歐洲主權壓力訊號；單看法債殖利率高，不能直接推論違約風險。</span>
+        </aside>
+      </section>
+
+      <section class="market-section tsmc-section" aria-labelledby="tsmc-title">
+        <div class="section-heading">
+          <div><p class="kicker">03 / TSMC RADAR</p><h2 id="tsmc-title">台積電，拆成市場、基本面與新聞。</h2></div>
+          <p>股價與 ADR 是市場溫度；官方月營收與法說才是基本面依據。新聞不會自動變成交易訊號。</p>
+        </div>
+        <div id="tsmc-cards" class="quote-grid"></div>
+        <div class="tsmc-grid">
+          <article class="tsmc-rule-card">
+            <p class="kicker">WHAT THE MODEL WATCHES</p>
+            <h3>市場領先度</h3>
+            <p>TSM 相對 SOX 的兩個月表現若明顯落後，才列為早期壓力；單日 ADR 與台股不同時區的價差不單獨判斷。</p>
+            <a href="https://investor.tsmc.com/english/financial-calendar" target="_blank" rel="noopener noreferrer">TSMC 官方財務行事曆</a>
+          </article>
+          <div class="news-stack">
+            <div class="news-stack-head"><p class="kicker">NEWS WATCH</p><span>只作研究線索</span></div>
+            <div id="tsmc-news" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="market-section" aria-labelledby="energy-title">
         <div class="section-heading compact-heading">
-          <div><p class="kicker">03 / MACRO &amp; ENERGY</p><h2 id="energy-title">能源壓力</h2></div>
+          <div><p class="kicker">04 / MACRO &amp; ENERGY</p><h2 id="energy-title">能源壓力</h2></div>
           <p>油價是通膨與地緣風險的其中一個即時溫度計。</p>
         </div>
         <div id="energy-cards" class="quote-grid"></div>
       </section>
 
+      <section class="market-section early-risk-section" aria-labelledby="early-risk-title">
+        <div class="section-heading">
+          <div><p class="kicker">05 / EARLY WARNING RESEARCH</p><h2 id="early-risk-title">提前風險指標。</h2></div>
+          <p>它提示「該不該檢視部位風險」，不會假裝知道明天會跌多少。</p>
+        </div>
+        <div class="risk-overview">
+          <article id="live-risk" class="live-risk-card" aria-live="polite"></article>
+          <aside class="risk-rules">
+            <p class="kicker">ESCALATION RULE</p>
+            <h3>至少兩個獨立支柱惡化，才升級警示。</h3>
+            <p>利率、歐債、日圓／JGB、台積電領先度、波動與能源是分開計算的；避免一個新聞標題就讓整個面板變紅。</p>
+          </aside>
+        </div>
+        <div class="pillar-grid" aria-label="早期風險指標支柱">
+          <article><span>01</span><h3>美國利率</h3><p>10Y 水位與上升速度</p></article>
+          <article><span>02</span><h3>歐洲主權債</h3><p>OAT–Bund 利差與擴大</p></article>
+          <article><span>03</span><h3>日圓／carry</h3><p>USD/JPY 急跌與 JGB</p></article>
+          <article><span>04</span><h3>TSMC／半導體</h3><p>TSM 相對 SOX 領先度</p></article>
+          <article><span>05</span><h3>市場確認</h3><p>VIX 與能源衝擊</p></article>
+        </div>
+      </section>
+
+      <section class="market-section backtest-section" aria-labelledby="backtest-title">
+        <div class="section-heading">
+          <div><p class="kicker">06 / TRANSPARENT BACKTEST</p><h2 id="backtest-title">這套規則過去有沒有提早說？</h2></div>
+          <p>網頁會即時計算固定規則，不會把結果漂亮化；載入失敗就不顯示準確率。</p>
+        </div>
+        <div id="backtest-status" class="backtest-status" role="status">正在讀取可重現的歷史資料並執行回測…</div>
+        <div id="backtest-metrics" class="backtest-metrics" aria-live="polite"></div>
+        <div class="backtest-method">
+          <div><strong>資料期間</strong><span>2008 年起至最近共同交易日的日資料</span></div>
+          <div><strong>預警條件</strong><span>日末 Early Risk Score ≥ 40／100，且由低檔首次跨越</span></div>
+          <div><strong>目標事件</strong><span>未來 20 個交易日 SOX 最大跌幅 ≥10%，或台灣加權 ≥7%</span></div>
+          <div><strong>重要限制</strong><span>這是風險檢視回測，不是當日交易預測；不同市場收盤時區會降低精準度。</span></div>
+        </div>
+        <details class="backtest-details">
+          <summary>看方法、資料來源與歷史警示</summary>
+          <div id="backtest-events" class="backtest-events"></div>
+          <p>回測使用 Yahoo Finance 的公開日資料，以及 Sveriges Riksbank（Refinitiv）提供的法、德 10 年債日資料。即時卡片仍以 Investing.com 為來源。回測採固定規則，不根據結果調整門檻。</p>
+        </details>
+      </section>
+
       <section class="market-section signal-section" aria-labelledby="signals-title">
         <div class="section-heading compact-heading">
-          <div><p class="kicker">04 / ALERT RULES</p><h2 id="signals-title">什麼情況會通知？</h2></div>
+          <div><p class="kicker">07 / ALERT RULES</p><h2 id="signals-title">什麼情況會通知？</h2></div>
           <p>這是預先寫好的監測規則；觸發時會先說明是哪一條，而不是給模糊的「市場不好」。</p>
         </div>
         <div id="signals" class="signal-list"></div>
@@ -89,5 +163,6 @@
     </main>
     <footer class="market-footer market-shell"><span>Market Watch · Howard Liu</span><span id="footer-date">資料日期：—</span></footer>
     <script src="market.js"></script>
+    <script src="early-risk.js"></script>
   </body>
 </html>
