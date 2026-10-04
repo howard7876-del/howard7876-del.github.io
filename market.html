@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="market.css?v=early-risk-v1" />
+    <link rel="stylesheet" href="market.css?v=allocation-check-v1" />
   </head>
   <body>
     <a class="skip-link" href="#dashboard">跳至市場儀表板</a>
@@ -127,9 +127,68 @@
         </div>
       </section>
 
+      <section class="market-section allocation-section" aria-labelledby="allocation-title">
+        <div class="section-heading">
+          <div><p class="kicker">06 / ALLOCATION CHECK</p><h2 id="allocation-title">部位調節，先回到自己的規則。</h2></div>
+          <p>這不是預測哪一檔會漲跌；它只計算你自己設定的配置目標、允許偏離與新增資金。</p>
+        </div>
+
+        <div id="allocation-risk-context" class="allocation-risk-context" role="status">
+          正在讀取市場背景；部位試算不會因單一市場訊號自動改變。
+        </div>
+
+        <div class="allocation-layout">
+          <form id="allocation-form" class="allocation-form" novalidate>
+            <div class="allocation-form-head">
+              <div>
+                <p class="kicker">YOUR INPUTS</p>
+                <h3>把規則寫在進場之前。</h3>
+              </div>
+              <span>所有數字只在你的瀏覽器中計算</span>
+            </div>
+            <div class="allocation-fields">
+              <label>現有可投資資產總額 <span>TWD</span><input id="allocation-total" name="total" type="number" min="1" step="1000" value="1000000" inputmode="decimal" /></label>
+              <label>目前股票／高波動資產 <span>%</span><input id="allocation-current" name="current" type="number" min="0" max="100" step="0.1" value="75" inputmode="decimal" /></label>
+              <label>你自己的目標比例 <span>%</span><input id="allocation-target" name="target" type="number" min="0" max="100" step="0.1" value="70" inputmode="decimal" /></label>
+              <label>允許偏離範圍 <span>百分點</span><input id="allocation-band" name="band" type="number" min="0" max="25" step="0.5" value="5" inputmode="decimal" /></label>
+              <label>這次可投入的新資金 <span>TWD</span><input id="allocation-new-money" name="newMoney" type="number" min="0" step="1000" value="100000" inputmode="decimal" /></label>
+              <label>預計用錢時間
+                <select id="allocation-horizon" name="horizon">
+                  <option value="long" selected>5 年以上</option>
+                  <option value="medium">3–5 年</option>
+                  <option value="short">3 年內</option>
+                </select>
+              </label>
+            </div>
+            <label class="allocation-confirm"><input id="allocation-reserve" name="reserve" type="checkbox" /><span>我已將緊急預備金與 3 年內會用到的錢排除在這筆可投資資產之外。</span></label>
+            <div class="allocation-actions">
+              <button type="submit">更新配置試算</button>
+              <p>70%／5%／100 萬只是可編輯範例，不是網站預設推薦。</p>
+            </div>
+          </form>
+
+          <aside id="allocation-results" class="allocation-results" aria-live="polite" aria-atomic="true"></aside>
+        </div>
+
+        <div class="allocation-principles" aria-label="配置試算規則">
+          <article><span>01</span><h3>先訂目標</h3><p>目標比例應來自期限、現金需求與承受損失，不由一則新聞決定。</p></article>
+          <article><span>02</span><h3>偏離才調整</h3><p>在你選定的容許區間內，試算會顯示「維持」，避免頻繁換手。</p></article>
+          <article><span>03</span><h3>新資金優先</h3><p>能用新增資金補足時，先不用為了追訊號而賣出既有長期部位。</p></article>
+        </div>
+
+        <details class="allocation-details">
+          <summary>看這個試算怎麼算，以及它不會做什麼</summary>
+          <div>
+            <p><strong>試算公式：</strong>現有高波動資產＝現有可投資資產 × 目前比例；加入新資金後，再以你自己設定的目標比例與容許偏離範圍求出上下界。</p>
+            <p><strong>市場資料的角色：</strong>Early Risk 只決定是否提醒你重新檢視風險，不會覆寫你的目標比例，也不會產生個股買賣指令。</p>
+            <p><strong>限制：</strong>未計入稅費、交易成本、流動性、最小交易單位、負債、保險、其他資產或完整財務狀況。它不預測報酬，也不保證獲利。</p>
+          </div>
+        </details>
+      </section>
+
       <section class="market-section backtest-section" aria-labelledby="backtest-title">
         <div class="section-heading">
-          <div><p class="kicker">06 / TRANSPARENT BACKTEST</p><h2 id="backtest-title">這套規則過去有沒有提早說？</h2></div>
+          <div><p class="kicker">07 / TRANSPARENT BACKTEST</p><h2 id="backtest-title">這套規則過去有沒有提早說？</h2></div>
           <p>網頁會即時計算固定規則，不會把結果漂亮化；載入失敗就不顯示準確率。</p>
         </div>
         <div id="backtest-status" class="backtest-status" role="status">正在讀取可重現的歷史資料並執行回測…</div>
@@ -149,7 +208,7 @@
 
       <section class="market-section signal-section" aria-labelledby="signals-title">
         <div class="section-heading compact-heading">
-          <div><p class="kicker">07 / ALERT RULES</p><h2 id="signals-title">什麼情況會通知？</h2></div>
+          <div><p class="kicker">08 / ALERT RULES</p><h2 id="signals-title">什麼情況會通知？</h2></div>
           <p>這是預先寫好的監測規則；觸發時會先說明是哪一條，而不是給模糊的「市場不好」。</p>
         </div>
         <div id="signals" class="signal-list"></div>
@@ -162,7 +221,8 @@
       </section>
     </main>
     <footer class="market-footer market-shell"><span>Market Watch · Howard Liu</span><span id="footer-date">資料日期：—</span></footer>
-    <script src="market.js?v=early-risk-v1"></script>
-    <script src="early-risk.js?v=early-risk-v1"></script>
+    <script src="market.js?v=allocation-check-v1"></script>
+    <script src="early-risk.js?v=allocation-check-v1"></script>
+    <script src="allocation-guide.js?v=allocation-check-v1"></script>
   </body>
 </html>

@@ -143,6 +143,7 @@
     renderCurrent(data);
     renderMetrics(data);
     renderEvents(data);
+    document.dispatchEvent(new CustomEvent('early-risk:ready', { detail: data }));
   }
 
   function showBacktestFailure() {

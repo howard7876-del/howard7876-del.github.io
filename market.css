@@ -119,6 +119,59 @@ h1 em { color: #64c3b4; }
 .pillar-grid span { color: var(--teal); display: block; font-size: 10px; font-weight: 800; letter-spacing: .08em; margin-bottom: 25px; }
 .pillar-grid h3 { font-family: var(--serif); font-size: 22px; letter-spacing: -.03em; margin: 0 0 8px; }
 .pillar-grid p { color: var(--muted); font-size: 11px; line-height: 1.5; margin: 0; }
+.allocation-section { padding-bottom: 86px; }
+.allocation-risk-context { align-items: start; background: #e2ece8; border-left: 4px solid var(--teal); display: grid; gap: 6px; grid-template-columns: minmax(145px, .55fr) minmax(180px, .75fr) minmax(0, 1.7fr); margin-bottom: 18px; padding: 17px 20px; }
+.allocation-risk-context .kicker { grid-row: 1 / 3; margin: 4px 0 0; }
+.allocation-risk-context strong { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: -.025em; line-height: 1.1; }
+.allocation-risk-context span { color: #52625d; font-size: 12px; line-height: 1.65; }
+.allocation-risk-context small { color: #6d5541; font-size: 10px; font-weight: 700; grid-column: 2 / -1; line-height: 1.55; }
+.allocation-risk-context.is-review { background: #f0e6d9; border-left-color: var(--amber); }
+.allocation-risk-context.is-unavailable { background: #f5dddd; border-left-color: var(--red); }
+.allocation-layout { display: grid; gap: 16px; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); }
+.allocation-form { background: var(--night-lift); color: #f8f6ef; padding: 30px; }
+.allocation-form-head { align-items: end; border-bottom: 1px solid rgba(255,255,255,.16); display: flex; gap: 25px; justify-content: space-between; margin-bottom: 24px; padding-bottom: 19px; }
+.allocation-form-head .kicker { color: #6cc5b6; margin-bottom: 9px; }
+.allocation-form-head h3 { font-family: var(--serif); font-size: 31px; letter-spacing: -.04em; margin: 0; }
+.allocation-form-head > span { color: rgba(255,255,255,.6); font-size: 10px; font-weight: 700; line-height: 1.5; max-width: 125px; text-align: right; }
+.allocation-fields { display: grid; gap: 15px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.allocation-fields label { color: rgba(255,255,255,.82); display: block; font-size: 11px; font-weight: 800; letter-spacing: .025em; }
+.allocation-fields label > span { color: #6cc5b6; float: right; font-size: 9px; letter-spacing: .08em; }
+.allocation-fields input, .allocation-fields select { appearance: none; background: #f9f7f1; border: 1px solid rgba(255,255,255,.16); border-radius: 0; color: var(--ink); font: 700 16px/1.2 var(--sans); margin-top: 7px; min-height: 43px; padding: 10px 11px; width: 100%; }
+.allocation-fields select { background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 15px) 18px, calc(100% - 10px) 18px; background-repeat: no-repeat; background-size: 5px 5px, 5px 5px; padding-right: 30px; }
+.allocation-fields input:focus-visible, .allocation-fields select:focus-visible, .allocation-confirm input:focus-visible, .allocation-actions button:focus-visible { outline: 3px solid #7bdbcc; outline-offset: 3px; }
+.allocation-confirm { align-items: flex-start; color: rgba(255,255,255,.77); cursor: pointer; display: flex; font-size: 11px; gap: 10px; line-height: 1.6; margin-top: 22px; }
+.allocation-confirm input { accent-color: #64c3b4; height: 16px; margin: 2px 0 0; width: 16px; }
+.allocation-actions { align-items: center; display: flex; gap: 16px; margin-top: 21px; }
+.allocation-actions button { background: #6bc5b6; border: 0; color: #0c2629; cursor: pointer; font: 800 11px/1 var(--sans); letter-spacing: .04em; padding: 14px 16px; }
+.allocation-actions button:hover { background: #91ded2; }
+.allocation-actions p { color: rgba(255,255,255,.53); font-size: 10px; line-height: 1.55; margin: 0; }
+.allocation-results { background: #f9f7f1; border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 100%; padding: 30px; }
+.allocation-results.is-caution { border-top: 4px solid var(--amber); }
+.allocation-results.is-ready { border-top: 4px solid var(--teal); }
+.allocation-results.is-error { border-top: 4px solid var(--red); }
+.allocation-results .kicker { margin-bottom: 12px; }
+.allocation-results h3 { font-family: var(--serif); font-size: 34px; letter-spacing: -.045em; line-height: 1.03; margin: 0 0 15px; }
+.allocation-result-copy { color: var(--muted); font-size: 13px; line-height: 1.75; margin-bottom: 23px; }
+.allocation-metrics { display: grid; gap: 9px; grid-template-columns: 1fr; }
+.allocation-metric { border-bottom: 1px solid var(--line); display: grid; gap: 2px 15px; grid-template-columns: 1fr auto; padding: 11px 0; }
+.allocation-metric-label { color: var(--muted); font-size: 10px; font-weight: 800; grid-column: 1; letter-spacing: .035em; }
+.allocation-metric-value { font-family: var(--serif); font-size: 24px; font-weight: 400; grid-column: 2; grid-row: 1 / 3; letter-spacing: -.035em; text-align: right; }
+.allocation-metric-note { color: #6a747c; font-size: 10px; grid-column: 1; line-height: 1.45; }
+.allocation-action { background: #e7eee9; border-left: 3px solid var(--teal); margin-top: 19px; padding: 13px 15px; }
+.is-caution .allocation-action { background: #f0e6d9; border-left-color: var(--amber); }
+.allocation-action strong { display: block; font-size: 12px; margin-bottom: 5px; }
+.allocation-action p { color: #53615e; font-size: 11px; line-height: 1.65; margin: 0; }
+.allocation-disclaimer { color: #788188; font-size: 10px; line-height: 1.6; margin: auto 0 0; padding-top: 18px; }
+.allocation-principles { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+.allocation-principles article { background: #f9f7f1; border: 1px solid var(--line); min-height: 156px; padding: 18px; }
+.allocation-principles span { color: var(--teal); display: block; font-size: 10px; font-weight: 800; letter-spacing: .08em; margin-bottom: 24px; }
+.allocation-principles h3 { font-family: var(--serif); font-size: 23px; letter-spacing: -.03em; margin: 0 0 7px; }
+.allocation-principles p { color: var(--muted); font-size: 11px; line-height: 1.6; margin: 0; }
+.allocation-details { border-bottom: 1px solid var(--line); margin-top: 19px; padding-bottom: 16px; }
+.allocation-details summary { cursor: pointer; font-size: 12px; font-weight: 800; }
+.allocation-details[open] summary { margin-bottom: 15px; }
+.allocation-details p { color: var(--muted); font-size: 11px; line-height: 1.7; margin: 0 0 9px; max-width: 900px; }
+.allocation-details p:last-child { margin-bottom: 0; }
 .backtest-section { padding-bottom: 20px; }
 .backtest-status { background: #f0e6d9; border-left: 4px solid var(--amber); font-size: 13px; font-weight: 800; margin-bottom: 14px; padding: 15px 18px; }
 .backtest-status.is-ready { background: #dcece7; border-left-color: var(--teal); }
@@ -169,6 +222,11 @@ h1 em { color: #64c3b4; }
   .reading-note { min-height: 240px; }
   .tsmc-grid, .risk-overview { grid-template-columns: 1fr; }
   .pillar-grid { grid-template-columns: repeat(3, 1fr); }
+  .allocation-risk-context { grid-template-columns: 150px minmax(0, 1fr); }
+  .allocation-risk-context .kicker { grid-row: 1 / 4; }
+  .allocation-risk-context strong, .allocation-risk-context span, .allocation-risk-context small { grid-column: 2; }
+  .allocation-layout { grid-template-columns: 1fr; }
+  .allocation-principles { grid-template-columns: repeat(3, 1fr); }
   .backtest-metrics { grid-template-columns: repeat(3, 1fr); }
   .backtest-method { grid-template-columns: repeat(2, 1fr); }
   .early-risk-section { margin-inline: calc((100vw - min(100vw - 48px, 680px))/ -2); padding-inline: max(24px, calc((100vw - 680px)/2)); }
@@ -193,6 +251,22 @@ h1 em { color: #64c3b4; }
   .risk-driver small { grid-column: 1 / -1; }
   .pillar-grid { grid-template-columns: repeat(2, 1fr); }
   .pillar-grid article:last-child { grid-column: 1 / -1; }
+  .allocation-section { padding-bottom: 62px; }
+  .allocation-risk-context { display: block; padding: 17px; }
+  .allocation-risk-context .kicker { margin-bottom: 9px; }
+  .allocation-risk-context strong, .allocation-risk-context span, .allocation-risk-context small { display: block; }
+  .allocation-risk-context span { margin-top: 7px; }
+  .allocation-risk-context small { margin-top: 9px; }
+  .allocation-form, .allocation-results { padding: 22px; }
+  .allocation-form-head { align-items: start; display: block; }
+  .allocation-form-head > span { display: block; margin-top: 9px; max-width: none; text-align: left; }
+  .allocation-fields { grid-template-columns: 1fr; }
+  .allocation-actions { align-items: flex-start; flex-direction: column; }
+  .allocation-actions button { width: 100%; }
+  .allocation-principles { grid-template-columns: 1fr; }
+  .allocation-principles article { min-height: 0; }
+  .allocation-principles span { margin-bottom: 13px; }
+  .allocation-metric-value { font-size: 22px; }
   .backtest-metrics, .backtest-method { grid-template-columns: 1fr; }
   .backtest-metric { min-height: 0; }
   .signal-item { align-items: start; gap: 8px; grid-template-columns: 1fr; }
