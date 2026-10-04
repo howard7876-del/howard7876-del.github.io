@@ -1,14 +1,12 @@
 (function () {
   const byId = (id) => document.getElementById(id);
   const money = new Intl.NumberFormat('zh-TW', {
-    style: 'currency',
-    currency: 'TWD',
     maximumFractionDigits: 0
   });
 
   const number = (id) => Number(byId(id)?.value);
   const percent = (value) => `${value.toFixed(value % 1 ? 1 : 0)}%`;
-  const moneyText = (value) => money.format(Math.max(0, Math.round(value)));
+  const moneyText = (value) => `NT$${money.format(Math.max(0, Math.round(value)))}`;
   const clear = (node) => node?.replaceChildren();
 
   function make(tag, className, text) {
