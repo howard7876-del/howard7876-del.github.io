@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Howard Liu's market watch — a date-stamped market dashboard with source links and clear risk rules." />
+    <meta name="theme-color" content="#101824" />
+    <title>Market Watch — Howard Liu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="market.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#dashboard">跳至市場儀表板</a>
+    <header class="market-header">
+      <nav class="market-shell market-nav" aria-label="市場頁面導覽">
+        <a class="market-wordmark" href="index.html" aria-label="回到 Howard 的個人網站">HOWARD<span>.</span></a>
+        <a class="back-link" href="index.html">個人網站</a>
+      </nav>
+    </header>
+
+    <main id="dashboard" class="market-shell">
+      <section class="market-hero" aria-labelledby="market-title">
+        <div>
+          <p class="kicker">PERSONAL MARKET WATCH</p>
+          <h1 id="market-title">市場觀察，<em>不猜行情。</em></h1>
+          <p class="hero-copy">所有數字都保留來源與最近交易日。抓不到當前資料時，頁面應該顯示「未驗證」，而不是假裝它是最新。</p>
+        </div>
+        <aside class="score-card" aria-label="市場環境評分">
+          <p>市場環境</p>
+          <strong id="market-score">—</strong>
+          <span id="market-score-label">載入中</span>
+        </aside>
+      </section>
+
+      <section class="verification-card" aria-label="資料驗證狀態">
+        <div class="verification-icon" aria-hidden="true">✓</div>
+        <div>
+          <p id="verification-status" class="verification-status">正在讀取資料狀態</p>
+          <p id="verification-detail" class="verification-detail"></p>
+        </div>
+        <a class="source-button" href="https://www.investing.com/" target="_blank" rel="noopener noreferrer">開啟 Investing.com</a>
+      </section>
+
+      <section class="market-section" aria-labelledby="equity-title">
+        <div class="section-heading">
+          <div><p class="kicker">01 / RISK APPETITE</p><h2 id="equity-title">股市與波動</h2></div>
+          <p>用主要指數和 VIX 看風險偏好；它們不是買賣指令。</p>
+        </div>
+        <div id="equity-cards" class="quote-grid quote-grid-four" aria-live="polite"></div>
+      </section>
+
+      <section class="market-section split-section" aria-labelledby="rates-title">
+        <div>
+          <div class="section-heading compact-heading">
+            <div><p class="kicker">02 / FUNDING PRESSURE</p><h2 id="rates-title">債券與匯率</h2></div>
+          </div>
+          <div id="rates-cards" class="quote-grid"></div>
+        </div>
+        <aside class="reading-note">
+          <p class="kicker">HOW TO READ THIS</p>
+          <h3>殖利率沒降，股市就還有一個看不見的逆風。</h3>
+          <p>這頁特別追蹤美國 10 年債與日本 10 年債。它們高不代表一定下跌；只是風險資產的折現壓力不能被忽略。</p>
+        </aside>
+      </section>
+
+      <section class="market-section" aria-labelledby="energy-title">
+        <div class="section-heading compact-heading">
+          <div><p class="kicker">03 / MACRO &amp; ENERGY</p><h2 id="energy-title">能源壓力</h2></div>
+          <p>油價是通膨與地緣風險的其中一個即時溫度計。</p>
+        </div>
+        <div id="energy-cards" class="quote-grid"></div>
+      </section>
+
+      <section class="market-section signal-section" aria-labelledby="signals-title">
+        <div class="section-heading compact-heading">
+          <div><p class="kicker">04 / ALERT RULES</p><h2 id="signals-title">什麼情況會通知？</h2></div>
+          <p>這是預先寫好的監測規則；觸發時會先說明是哪一條，而不是給模糊的「市場不好」。</p>
+        </div>
+        <div id="signals" class="signal-list"></div>
+      </section>
+
+      <section class="market-section source-section" aria-labelledby="source-title">
+        <p class="kicker">DATA DISCIPLINE</p>
+        <h2 id="source-title">這不是投資建議。</h2>
+        <p>這是 Howard 的市場監測面板，用來讓風險訊號可回查。資料可能延遲，交易決定仍要看你的資金、期限與承受度。數字旁的來源連結會帶你回到原始報價頁。</p>
+      </section>
+    </main>
+    <footer class="market-footer market-shell"><span>Market Watch · Howard Liu</span><span id="footer-date">資料日期：—</span></footer>
+    <script src="market-data.js"></script>
+    <script src="market.js"></script>
+  </body>
+</html>
