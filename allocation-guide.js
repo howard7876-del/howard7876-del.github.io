@@ -110,6 +110,7 @@
     const excessAboveUpper = Math.max(0, currentRiskAssets - futureUpper);
     const remainder = values.newMoney - amountWithinUpper;
     const currentAllocationAfterCash = currentRiskAssets / futureTotal * 100;
+    const allocationAfterProposedBuy = (currentRiskAssets + amountToTarget) / futureTotal * 100;
     const targetBand = `${percent(lower)}–${percent(upper)}`;
 
     const result = byId('allocation-results');
@@ -153,8 +154,8 @@
       action.append(make('strong', '', `超出上限的配置差額：${moneyText(excessAboveUpper)}`));
       action.append(make('p', '', `即使把 ${moneyText(values.newMoney)} 全部列入資產，股票／高波動資產仍約為 ${percent(currentAllocationAfterCash)}。試算不會指定賣出標的，也不建議一次清倉。`));
     } else if (currentRiskAssets < futureLower) {
-      action.append(make('strong', '', `若想回到目標，可先以新增資金補到：${moneyText(amountToTarget)}`));
-      action.append(make('p', '', `加入新資金後，股票／高波動資產約為 ${percent(currentAllocationAfterCash)}；其餘 ${moneyText(remainder)} 不因這個試算自動指定用途。`));
+      action.append(make('strong', '', `若想朝目標靠近，新增資金最多可先放入：${moneyText(amountToTarget)}`));
+      action.append(make('p', '', `若先放入這筆額度，股票／高波動資產約為 ${percent(allocationAfterProposedBuy)}；其餘 ${moneyText(remainder)} 不因這個試算自動指定用途。`));
     } else {
       action.append(make('strong', '', `新增資金中，最多 ${moneyText(amountWithinUpper)} 仍在你的上限內`));
       action.append(make('p', '', `加入新資金後，若完全不買高波動資產，比例約為 ${percent(currentAllocationAfterCash)}。是否投入與投入標的，仍取決於你原本的計畫。`));
