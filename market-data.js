@@ -4,20 +4,20 @@
  * or set verification.state to "failed" with the reason.
  */
 window.marketSnapshot = {
-  reportDate: "2026-10-04",
+  reportDate: "2026-10-07",
   lastVerified: "2026-10-04",
   verification: {
-    state: "verified",
-    headline: "已核對來源；今天休市，顯示最近交易日收盤。",
-    detail: "資料來源頁面於 2026-10-04 再次核對。台、美、日市場主要報價的最近交易日為 2026-10-02；並未把週末當成新的交易日。"
+    state: "failed",
+    headline: "資料核對失敗；請勿將本頁視為最新行情。",
+    detail: "2026-10-07 核對時，Investing.com 的台灣加權即時頁、歷史頁標頭與同日歷史列出現互相衝突的數值。舊卡片保留原實際交易日；待來源一致後才會恢復已核對狀態。"
   },
   alerts: {
     activeKeys: ["rates-red"],
     lastNotifiedAt: "2026-10-04"
   },
   score: {
-    value: "5.4 / 10",
-    label: "🟡 謹慎偏中性",
+    value: "—",
+    label: "資料未驗證",
     tone: "amber"
   },
   groups: {
@@ -55,12 +55,12 @@ window.marketSnapshot = {
     { date: "2026-09-27", tag: "技術／產能", sourceName: "EDN via Investing.com", title: "2nm 產能預期的媒體報導", description: "保留為產業研究線索，需等待公司月營收、法說或重大訊息交叉確認。", source: "https://www.investing.com/news/stock-market-news/tsmc-2nm-wafer-capacity-to-exceed-earlier-estimates-edn-reports-4919289" }
   ],
   signals: [
-    { level: "red", title: "利率壓力", rule: "美國 10 年債 > 5.20%", current: "目前 5.277% · 已觸發", description: "利率紅線已觸發；這是風險提醒，不是單一買賣指令。" },
-    { level: "red", title: "恐慌波動", rule: "VIX ≥ 25", current: "目前 15.31 · 未觸發", description: "這是市場壓力加速的提醒，不是單一買賣訊號。" },
-    { level: "red", title: "能源衝擊", rule: "Brent ≥ $110 或 WTI ≥ $100", current: "Brent $102.72 · WTI $91.26 · 未觸發", description: "若觸發，檢查通膨與地緣風險是否同步升級。" },
-    { level: "amber", title: "股市急跌", rule: "TWII、NDX 或 SOX 單日 ≤ -3%", current: "最近交易日未觸發", description: "先辨認是否為單一產業消息或跨市場賣壓。" },
-    { level: "amber", title: "歐債碎片化", rule: "OAT–Bund 高分位且 20 日擴大 ≥15 bp", current: "由下方日頻模型計算", description: "法債絕對殖利率高不等於危機；要同時看到法德利差的水位與擴大速度。" },
-    { level: "amber", title: "日圓 carry 回補", rule: "USD/JPY 5 日下跌 ≥2% 且匯率波動高", current: "由下方日頻模型計算", description: "風險是日圓突然升值，不是日圓處在某個絕對價位。" },
-    { level: "amber", title: "TSMC 領先度", rule: "TSM 跌破均線且 20 日相對 SOX 落後 ≥5%", current: "由下方日頻模型計算", description: "把市場領先度與公司基本面、新聞區分開來看。" }
+    { level: "red", title: "利率壓力", rule: "美國 10 年債 > 5.20%", current: "資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源的同日數字一致後，才會重新判定。" },
+    { level: "red", title: "恐慌波動", rule: "VIX ≥ 25", current: "資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源的同日數字一致後，才會重新判定。" },
+    { level: "red", title: "能源衝擊", rule: "Brent ≥ $110 或 WTI ≥ $100", current: "資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源的同日數字一致後，才會重新判定。" },
+    { level: "amber", title: "股市急跌", rule: "TWII、NDX 或 SOX 單日 ≤ -3%", current: "資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源的同日數字一致後，才會重新判定。" },
+    { level: "amber", title: "歐債碎片化", rule: "OAT–Bund 高分位且 20 日擴大 ≥15 bp", current: "模型資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源一致且日頻模型重新產生後，才會重新判定。" },
+    { level: "amber", title: "日圓 carry 回補", rule: "USD/JPY 5 日下跌 ≥2% 且匯率波動高", current: "模型資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源一致且日頻模型重新產生後，才會重新判定。" },
+    { level: "amber", title: "TSMC 領先度", rule: "TSM 跌破均線且 20 日相對 SOX 落後 ≥5%", current: "模型資料未驗證；本次不更新觸發狀態", description: "等待所有必要來源一致且日頻模型重新產生後，才會重新判定。" }
   ]
 };
